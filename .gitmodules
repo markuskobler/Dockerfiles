@@ -2,3 +2,6 @@
 	path = rust-lang
 	url = https://github.com/markuskobler/Dockerfiles.git
 	branch = rust-lang
+[submodule "registry"]
+	path = registry
+	url = https://github.com/markuskobler/Dockerfiles.git

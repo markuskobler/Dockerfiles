@@ -2,3 +2,7 @@ general:
   branches:
     ignore:
       - master
+
+test:
+  override:
+    - echo "check branches"
