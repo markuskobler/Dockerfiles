@@ -6,7 +6,9 @@ dependencies:
   override:
     - docker info
     - docker build --pull -t markuskobler/rust-lang:nightly /home/ubuntu/Dockerfiles:
-        parallel: true
+
+test:
+  override:
     - docker images
 
 
