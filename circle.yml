@@ -1,0 +1,19 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build --pull -t markuskobler/rust-lang:nightly Dockerfiles:
+        parallel: true
+    - docker images
+
+
+deployment:
+  hub:
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD:
+          parallel: true
+      - docker push markuskobler/rust-lang:
+          parallel: true
