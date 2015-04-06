@@ -1,0 +1,4 @@
+[submodule "rust-lang"]
+	path = rust-lang
+	url = https://github.com/markuskobler/Dockerfiles.git
+	branch = rust-lang
