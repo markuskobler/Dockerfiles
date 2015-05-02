@@ -34,3 +34,4 @@ docker save $ID | tar -xOf - "$ID/layer.tar" | tar -xf - -C out "haproxy/haproxy
 docker save $ID | tar -xOf - "$ID/layer.tar" | tar -xf - -C out "haproxy/haproxy-systemd-wrapper"
 
 docker build -t markuskobler/haproxy:$VERSION .
+docker tag -f markuskobler/haproxy:$VERSION quay.io/markus/haproxy:$VERSION
