@@ -1,3 +1,10 @@
+general:
+  branches:
+    ignore:
+      - rust-lang
+      - rust-lang-nightly
+      - master
+      
 test:
   override:
     - echo "check branches"
