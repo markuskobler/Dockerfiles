@@ -7,7 +7,7 @@ VERSION=1.5.11
 cat <<EOF | docker build --pull -t "haproxy-build" -
 FROM gliderlabs/alpine:edge
 
-RUN apk update && apk add curl tar gcc make perl linux-headers libc-dev xz-dev zlib-dev pcre-dev
+RUN apk add --update curl tar gcc make perl linux-headers libc-dev xz-dev zlib-dev pcre-dev
 
 RUN \
   mkdir -p /openssl && \

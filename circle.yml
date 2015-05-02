@@ -1,0 +1,26 @@
+general:
+  branches:
+    ignore:
+      - master
+
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - /home/ubuntu/build.sh
+
+test:
+  override:
+    - docker images
+
+deployment:
+  hub:
+    branch: haproxy
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - docker push markuskobler/haproxy
+      - docker login -e $QUAY_EMAIL -u $QUAY_USER -p $QUAY_PASSWORD quay.io
+      - docker push quay.io/markus/haproxy
