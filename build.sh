@@ -30,6 +30,7 @@ ID=`docker inspect -f '{{ .Id }}' haproxy-build`
 
 rm -rf out; mkdir -p out
 
-docker save $ID | tar -xOf - "$ID/layer.tar" | tar -xf - -C out "haproxy/haproxy*"
+docker save $ID | tar -xOf - "$ID/layer.tar" | tar -xf - -C out "haproxy/haproxy"
+docker save $ID | tar -xOf - "$ID/layer.tar" | tar -xf - -C out "haproxy/haproxy-systemd-wrapper"
 
 docker build -t markuskobler/haproxy:$VERSION .
