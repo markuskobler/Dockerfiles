@@ -1,6 +1,8 @@
 general:
   branches:
     ignore:
+      - rust-lang
+      - rust-lang-nightly
       - master
 
 machine:
