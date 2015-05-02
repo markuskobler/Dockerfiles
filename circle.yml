@@ -10,7 +10,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - /home/ubuntu/build.sh
+    - /home/ubuntu/Dockerfiles/build.sh
 
 test:
   override:
