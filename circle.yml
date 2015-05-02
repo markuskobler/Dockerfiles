@@ -16,12 +16,9 @@ test:
   override:
     - docker images
 
-
 deployment:
   hub:
     branch: rust-lang
     commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD:
-          parallel: true
-      - docker push markuskobler/rust-lang:
-          parallel: true
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - docker push markuskobler/rust-lang
