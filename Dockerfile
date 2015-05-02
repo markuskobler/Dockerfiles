@@ -2,7 +2,6 @@ FROM debian:jessie
 
 RUN echo "export SHELL=/bin/bash" >> /root/.bashrc
 ENV DEBIAN_FRONTEND noninteractive
-ENV RUST_VERSION rust-1.0.0-nightly-x86_64-unknown-linux-gnu
 
 RUN \
    apt-get update && \
@@ -26,11 +25,11 @@ ADD https://get.docker.com/builds/Linux/x86_64/docker-latest /usr/bin/docker
 RUN chmod +x /usr/bin/docker
 
 RUN \
-   curl -s https://static.rust-lang.org/rustup.sh | sudo sh -s -- --channel=nightly && \
+   curl -s https://static.rust-lang.org/rustup.sh | sudo sh -s -- --channel=beta && \
    rm -rf /usr/local/share/doc/rust
 
 VOLUME ["/rust"]
 ENV USER root
-#ENV HOME /rust
+
 WORKDIR /rust
 ENTRYPOINT ["/bin/bash"]

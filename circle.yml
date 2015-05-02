@@ -10,7 +10,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build --pull -t markuskobler/rust-lang:nightly /home/ubuntu/Dockerfiles
+    - docker build --pull -t markuskobler/rust-lang:beta /home/ubuntu/Dockerfiles
 
 test:
   override:
