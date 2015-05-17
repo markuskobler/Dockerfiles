@@ -12,7 +12,8 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build --pull -t markuskobler/rust-lang:beta /home/ubuntu/Dockerfiles
+    - docker build --pull -t markuskobler/rust-lang:1.0.0 /home/ubuntu/Dockerfiles
+    - docker tag -f markuskobler/rust-lang:1.0.0 markuskobler/rust-lang:latest
 
 test:
   override:
