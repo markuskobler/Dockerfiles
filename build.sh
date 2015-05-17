@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-VERSION=1.5.11
+VERSION=1.5.12
 
 cat <<EOF | docker build --pull -t "haproxy-build" -
 FROM gliderlabs/alpine:edge
