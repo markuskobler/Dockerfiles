@@ -5,3 +5,30 @@
 [submodule "registry"]
 	path = registry
 	url = https://github.com/markuskobler/Dockerfiles.git
+[submodule "postgres"]
+	path = postgres
+	url = https://github.com/markuskobler/Dockerfiles.git
+[submodule "spartan"]
+	path = spartan
+	url = https://github.com/markuskobler/Dockerfiles.git
+[submodule "haproxy"]
+	path = haproxy
+	url = https://github.com/markuskobler/Dockerfiles.git
+[submodule "elasticsearch"]
+	path = elasticsearch
+	url = https://github.com/markuskobler/Dockerfiles.git
+[submodule "keepalived"]
+	path = keepalived
+	url = https://github.com/markuskobler/Dockerfiles.git
+[submodule "rsyslog"]
+	path = rsyslog
+	url = https://github.com/markuskobler/Dockerfiles.git
+[submodule "kibana"]
+	path = kibana
+	url = https://github.com/markuskobler/Dockerfiles.git
+[submodule "spartan-java"]
+	path = spartan-java
+	url = "https://github.com/markuskobler/Dockerfiles.git#spartan"
+[submodule "rust-lang-nightly"]
+	path = rust-lang-nightly
+	url = https://github.com/markuskobler/Dockerfiles.git
