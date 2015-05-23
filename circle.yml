@@ -1,8 +1,6 @@
 general:
   branches:
     ignore:
-      - rust-lang
-      - rust-lang-nightly
       - master
 
 machine:
@@ -13,6 +11,7 @@ dependencies:
   override:
     - docker info
     - docker build --pull -t markuskobler/rust-lang:nightly /home/ubuntu/Dockerfiles
+    - docker tag -f markuskobler/rust-lang:nightly quay.io/markus/rust-lang:nightly
 
 test:
   override:
@@ -24,3 +23,5 @@ deployment:
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
       - docker push markuskobler/rust-lang
+      - docker login -e $QUAY_EMAIL -u $QUAY_USER -p $QUAY_PASSWORD quay.io
+      - docker push quay.io/markus/rust-lang
