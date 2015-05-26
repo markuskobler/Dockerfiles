@@ -30,7 +30,7 @@ RUN \
    curl -sO https://static.rust-lang.org/dist/rust-$RUST_VERSION-x86_64-unknown-linux-gnu.tar.gz && \
    tar -xvzf rust-$RUST_VERSION-x86_64-unknown-linux-gnu.tar.gz && \
    ./rust-$RUST_VERSION-x86_64-unknown-linux-gnu/install.sh && \
-   rm -rf rust-$RUST_VERSION-x86_64-unknown-linux-gnu{,.tar.gz} && \
+   rm -rf /rust-$RUST_VERSION-x86_64-unknown-linux-gnu{,.tar.gz} && \
    rm -rf /usr/local/share/doc/rust
 
 VOLUME ["/rust"]
