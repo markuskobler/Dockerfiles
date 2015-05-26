@@ -27,10 +27,10 @@ RUN chmod +x /usr/bin/docker
 ENV RUST_VERSION=1.0.0
 
 RUN \
-   curl -sO https://static.rust-lang.org/dist/rust-$RUST_VERSION-x86_64-unknown-linux-gnu.tar.gz && \
-   tar -xvzf rust-$RUST_VERSION-x86_64-unknown-linux-gnu.tar.gz && \
-   ./rust-$RUST_VERSION-x86_64-unknown-linux-gnu/install.sh && \
-   rm -rf rust-$RUST_VERSION-x86_64-unknown-linux-gnu{,.tar.gz} && \
+   curl -sL https://static.rust-lang.org/dist/rust-$RUST_VERSION-x86_64-unknown-linux-gnu.tar.gz | \
+   tar xz -C /tmp && \
+   /tmp/rust-$RUST_VERSION-x86_64-unknown-linux-gnu/install.sh && \
+   rm -rf /tmp/rust-$RUST_VERSION-x86_64-unknown-linux-gnu && \
    rm -rf /usr/local/share/doc/rust
 
 VOLUME ["/rust"]
