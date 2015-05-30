@@ -15,6 +15,7 @@ dependencies:
 test:
   override:
     - docker images
+    - docker run --rm -it quay.io/markus/rust-lang:nightly -c "/usr/local/bin/rustc --version"
 
 deployment:
   hub:
