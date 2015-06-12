@@ -11,7 +11,7 @@ RUN apk add --update curl tar gcc make perl linux-headers libc-dev xz-dev zlib-d
 
 RUN \
   mkdir -p /openssl && \
-  curl -sL https://www.openssl.org/source/openssl-1.0.2a.tar.gz | \
+  curl -sL https://www.openssl.org/source/openssl-1.0.2c.tar.gz | \
   tar xz -C /openssl --strip-components 1 && \
   cd /openssl && \
   ./config no-shared no-ssl2 no-ssl3 no-dso enable-ec_nistp_64_gcc_128 && \
