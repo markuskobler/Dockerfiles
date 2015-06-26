@@ -10,8 +10,8 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build --pull -t quay.io/markus/rust-lang:1.0.0 /home/ubuntu/Dockerfiles
-    - docker tag -f quay.io/markus/rust-lang:1.0.0 quay.io/markus/rust-lang:latest
+    - docker build --pull -t quay.io/markus/rust-lang:1.1.0 /home/ubuntu/Dockerfiles
+    - docker tag -f quay.io/markus/rust-lang:1.1.0 quay.io/markus/rust-lang:latest
 
 test:
   override:
