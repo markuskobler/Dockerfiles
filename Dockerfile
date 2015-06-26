@@ -24,7 +24,7 @@ RUN \
 ADD https://get.docker.com/builds/Linux/x86_64/docker-latest /usr/bin/docker
 RUN chmod +x /usr/bin/docker
 
-ENV RUST_VERSION=1.0.0
+ENV RUST_VERSION=1.1.0
 
 RUN \
    curl -sL https://static.rust-lang.org/dist/rust-$RUST_VERSION-x86_64-unknown-linux-gnu.tar.gz | \
