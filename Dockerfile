@@ -17,12 +17,17 @@ RUN \
       valgrind \
       libc-dbg \
       openssl \
-      libssl-dev && \
+      libssl-dev \
+      tcpdump \
+      dnsutils \
+      libcurl4-openssl-dev \
+      libelf-dev \
+      libdw-dev \
+      cmake \
+      gcc \
+      g++ && \
    apt-get clean autoclean && apt-get autoremove -y && \
    rm -rf /var/lib/apt /var/lib/cache/* /var/lib/log/*
-
-ADD https://get.docker.com/builds/Linux/x86_64/docker-latest /usr/bin/docker
-RUN chmod +x /usr/bin/docker
 
 ENV RUST_VERSION=1.1.0
 
@@ -33,8 +38,12 @@ RUN \
    rm -rf /tmp/rust-$RUST_VERSION-x86_64-unknown-linux-gnu && \
    rm -rf /usr/local/share/doc/rust
 
+RUN \
+  cd /root && curl -sL https://github.com/SimonKagstrom/kcov/archive/master.tar.gz | tar xz && \
+  mkdir kcov-master/build && cd /root/kcov-master/build && cmake .. && make && make install && \
+  cd /root && rm -rf /root/kcov-master
+
 VOLUME ["/rust"]
-ENV USER root
 
 WORKDIR /rust
 ENTRYPOINT ["/bin/bash"]
